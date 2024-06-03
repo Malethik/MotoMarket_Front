@@ -1,0 +1,44 @@
+<div class="login">
+  <form action="">
+    <span class="title">REGISTER</span>
+    <form [formGroup]="formRegister" (ngSubmit)="submit()">
+      <div class="input">
+        <label class="input-box" for="name">
+          <input
+            id="name"
+            type="text"
+            placeholder="Name"
+            formControlName="name"
+          />
+        </label>
+        <label class="input-box" for="email">
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+          />
+        </label>
+        <label class="input-box" for="password">
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </label>
+        <label for="birthday">
+          <span class="desc">Birthdate</span>
+          <input type="date" formControlName="birthday" />
+        </label>
+        <label for="avatar">
+          <span class="desc">Avatar</span>
+          <input type="file" #avatar (change)="onFileChange()" />
+        </label>
+      </div>
+      <button class="btn" type="submit" [disabled]="formRegister.invalid">
+        REGISTER
+      </button>
+    </form>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="bodyProfile">
+  <div class="header">
+    <img
+      [src]="
+        this.currentUser?.avatar?.secureUrl ||
+        '../../../assets/default-avatar.webp'
+      "
+      alt="profile avatar"
+      width="100px"
+      height="100px"
+    />
+    <a routerLink="#"
+      ><img src="../../../assets/mailico.svg" alt="Message recived"
+    /></a>
+    <a routerLink="/favorites"
+      ><img src="../../../assets/bookmark.svg" alt="My favorite item"
+    /></a>
+    <a routerLink="/my_item"
+      ><img src="../../../assets/myItem.svg" alt="My item on sell"
+    /></a>
+  </div>
+
+  <ul class="detail">
+    <li>Name:{{ this.currentUser?.name }}</li>
+    <li>Birthdate: {{ this.currentUser?.birthday }}</li>
+  </ul>
+</div>

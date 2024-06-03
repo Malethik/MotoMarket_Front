@@ -1,0 +1,32 @@
+<nav class="navbar" appClickOutside (clickOutside)="closeMenu()">
+  <div class="container">
+    <div
+      class="burger-menu"
+      (click)="onBurgerClicked()"
+      [class.active]="active"
+      (keyup)="onBurgerClicked()"
+      role="button"
+      aria-roledescription="navigation menu"
+      tabindex="0"
+    >
+      <div class="burger-container">
+        <div class="burger-inner"></div>
+      </div>
+    </div>
+
+    <ul class="menu" [class.active]="active">
+      <li><a *ngIf="!isLogged" routerLink="/login">Login</a></li>
+      <li><a *ngIf="isLogged" routerLink="/profile">Profile</a></li>
+      <li><a *ngIf="isLogged" routerLink="/my_item">My Item</a></li>
+      <li><a *ngIf="isLogged" routerLink="/favorites">Favorites</a></li>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a *ngIf="isLogged" routerLink="/item-form">Sell Item</a></li>
+      <li><a *ngIf="!isLogged" routerLink="/register">Register</a></li>
+      <li>
+        <button *ngIf="isLogged" (click)="this.state.setLogout()">
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+<div class="itemBody" [routerLink]="['/details/', itemInfo.id]">
+  @if (itemInfo.image[0]) {
+    <img
+      [src]="itemInfo.image[0].secureUrl"
+      [alt]="itemInfo.image[0].originalName"
+      height="90px"
+      width="90px"
+    />
+  } @else {
+    <img
+      src="../../../assets/image-missing-1178918.webp"
+      alt="missing"
+      height="90px"
+      width="90px"
+    />
+  }
+  <div class="cardInfo">
+    <span class="title">{{ itemInfo.title }}</span>
+    <span>€ {{ itemInfo.price }}</span>
+    <span>{{ itemInfo.content.substring(0, 20) }}...</span>
+  </div>
+</div>

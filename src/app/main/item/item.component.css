@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  margin-top: 80px;
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  @media (min-width: 600px) {
+    .cardContainer {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
