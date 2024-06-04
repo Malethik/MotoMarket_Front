@@ -12,7 +12,8 @@ import HomeComponent from './main/home/home.component';
     .body {
       overflow-y: auto;
       max-height: 100vh;
-      background-image: url('../assets/backgroundtexture.webp');
+      background-image: url('../assets/back.webp');
+      background-size: cover;
     }
   `,
 })
