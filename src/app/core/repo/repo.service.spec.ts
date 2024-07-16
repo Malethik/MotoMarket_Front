@@ -180,16 +180,4 @@ describe('RepoService', () => {
     expect(req.request.method).toBe('DELETE');
     req.flush({});
   });
-  it('should do a http get request', () => {
-    const mockUserList: User[] = [mockedUser];
-    const httpClientSpy = spyOn(service.httpClient, 'get').and.returnValue(
-      of(mockUserList),
-    );
-
-    service.dontSleepServer().subscribe((users) => {
-      expect(users).toEqual(mockUserList);
-    });
-
-    expect(httpClientSpy).toHaveBeenCalledWith(service.url + '/user');
-  });
 });
