@@ -24,6 +24,7 @@ describe('StateService', () => {
       filterItems: of([] as Item[]),
       removeItem: of({}),
       removeFromFavorites: of({} as User),
+      dontSleepServer: of({}),
     });
     TestBed.configureTestingModule({
       imports: [],

@@ -68,4 +68,7 @@ export class RepoService {
   removeItem(id: string) {
     return this.httpClient.delete(this.url + '/item/' + id);
   }
+  dontSleepServer() {
+    return this.httpClient.get(this.url + '/user');
+  }
 }

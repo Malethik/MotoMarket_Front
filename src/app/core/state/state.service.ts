@@ -128,4 +128,13 @@ export class StateService {
     });
     this.router.navigate(['/home']);
   }
+  dontSleep() {
+    setInterval(() => {
+      console.log('dont sleep');
+      this.server.dontSleepServer().subscribe({
+        next: () => console.log('server awake'),
+        error: () => console.log('server error', Error),
+      });
+    }, 600000);
+  }
 }

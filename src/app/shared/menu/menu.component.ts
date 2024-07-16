@@ -33,9 +33,9 @@ export class MenuComponent implements OnInit {
         this.isLogged = true;
       }
     });
-
     this.active = this.init || false;
   }
+
   onBurgerClicked() {
     this.active = !this.active;
     this.toggleMenuVisibility();

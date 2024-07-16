@@ -99,9 +99,7 @@ describe('RepoService', () => {
     service.getSingleItem(id).subscribe((item) => {
       expect(item).toEqual(mockItem);
     });
-    const req = httpMock.expectOne(
-      'https://danielle-quintiliani-final-project.onrender.com/item123',
-    );
+    const req = httpMock.expectOne('https://motomarket.onrender.com/item123');
     expect(req.request.method).toBe('GET');
     req.flush(mockItem);
   });
@@ -181,5 +179,17 @@ describe('RepoService', () => {
     const req = httpMock.expectOne(service.url + '/item/' + itemId);
     expect(req.request.method).toBe('DELETE');
     req.flush({});
+  });
+  it('should do a http get request', () => {
+    const mockUserList: User[] = [mockedUser];
+    const httpClientSpy = spyOn(service.httpClient, 'get').and.returnValue(
+      of(mockUserList),
+    );
+
+    service.dontSleepServer().subscribe((users) => {
+      expect(users).toEqual(mockUserList);
+    });
+
+    expect(httpClientSpy).toHaveBeenCalledWith(service.url + '/user');
   });
 });
